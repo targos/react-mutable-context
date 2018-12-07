@@ -35,7 +35,7 @@ function ColorUser() {
 
   return (
     <div style={{ color }}>
-      <div>I'm using color from the context!</div>
+      <div>Using color from the context!</div>
       <div>
         <button type="button" onClick={handleClick}>
           Change color
