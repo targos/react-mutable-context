@@ -8,10 +8,16 @@ export default class MutableContext<T> {
   constructor(initialValue: T) {
     this.value = initialValue;
     this.callbacks = new Set();
+    this.setValue = this.setValue.bind(this);
   }
 
   public getValue(): MutableContextValue<T> {
-    return [this.value, (newValue: T) => this.setValue(newValue)];
+    return [this.value, this.setValue];
+  }
+
+  public setValue(newValue: T): void {
+    this.value = newValue;
+    this.callbacks.forEach((callback) => callback());
   }
 
   public subscribe(callback: Function): void {
@@ -20,10 +26,5 @@ export default class MutableContext<T> {
 
   public unsubscribe(callback: Function): void {
     this.callbacks.delete(callback);
-  }
-
-  private setValue(newValue: T): void {
-    this.value = newValue;
-    this.callbacks.forEach((callback) => callback());
   }
 }

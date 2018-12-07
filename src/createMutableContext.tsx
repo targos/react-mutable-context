@@ -37,6 +37,7 @@ export function createMutableContext<T>(initialValue: T) {
 
   return {
     Provider: MutableContextProvider,
-    use: useMutableContext
+    use: useMutableContext,
+    setValue: context.setValue
   };
 }

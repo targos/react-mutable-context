@@ -16,9 +16,12 @@ Create a React context that can accessed and mutated with hooks.
 ```js
 import { createMutableContext } from 'react-mutable-context';
 
-const { Provider: ColorProvider, use: useColor } = createMutableContext(
-  'black'
-);
+const context = createMutableContext('black');
+
+const {
+  Provider: ColorProvider
+  use: useColor
+} = context;
 
 function App() {
   return (
@@ -44,6 +47,11 @@ function ColorUser() {
     </div>
   );
 }
+
+// The value can also be changed outside of React components
+setTimeout(() => {
+  context.setValue('green');
+}, 1000);
 ```
 
 ## License
