@@ -1,0 +1,65 @@
+{
+  "name": "react-mutable-context",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "module": "./lib-es6/index.js",
+  "types": "./lib/index.d.ts",
+  "keywords": [],
+  "author": "Michaël Zasso",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "lib-es6"
+  ],
+  "scripts": {
+    "clean": "rimraf lib lib-es6",
+    "eslint": "eslint src --ext ts --cache",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepublishOnly": "npm run tsc",
+    "test": "npm run test-only && npm run eslint",
+    "test-only": "jest",
+    "test-coverage": "npm run test-only --coverage",
+    "test-travis": "npm run test-coverage && npm run eslint",
+    "tsc": "npm run clean && npm run tsc-es5 && npm run tsc-es6",
+    "tsc-es5": "tsc",
+    "tsc-es6": "tsc --project tsconfig.es6.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/targos/react-mutable-context.git"
+  },
+  "bugs": {
+    "url": "https://github.com/targos/react-mutable-context/issues"
+  },
+  "homepage": "https://github.com/targos/react-mutable-context#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "eslint": "^5.9.0",
+    "eslint-config-cheminfo": "^1.18.0",
+    "eslint-config-cheminfo-typescript": "^1.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-typescript": "^0.14.0",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2",
+    "typescript-eslint-parser": "^21.0.2"
+  }
+}
