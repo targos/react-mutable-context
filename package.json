@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib lib-es6",
-    "eslint": "eslint src --ext ts --cache",
+    "eslint": "eslint src --ext ts",
     "eslint-fix": "npm run eslint -- --fix",
     "prepublishOnly": "npm run tsc",
     "test": "npm run test-only && npm run eslint",
