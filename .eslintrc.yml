@@ -1,1 +1,4 @@
 extends: cheminfo-typescript
+rules:
+  import/no-unresolved: off
+  no-unused-vars: off

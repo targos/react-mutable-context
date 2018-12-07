@@ -5,7 +5,9 @@
     "module": "commonjs",
     "strict": true,
     "moduleResolution": "node",
-    "declaration": true
+    "declaration": true,
+    "jsx": "react",
+    "esModuleInterop": true
   },
   "include": ["./src/**/*"],
   "exclude": ["./src/**/__tests__"]

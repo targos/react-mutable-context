@@ -1,6 +1,5 @@
-import {
+import React, {
   createContext,
-  createElement,
   useContext,
   useEffect,
   useState,
@@ -18,6 +17,7 @@ export function createMutableContext<T>(initialValue: T) {
   const reactContext = createContext<MutableContextValue<T>>(
     context.getValue()
   );
+  const { Provider: ReactProvider } = reactContext;
 
   function MutableContextProvider(props: IProviderProps) {
     const [value, setValue] = useState(() => context.getValue());
@@ -28,7 +28,7 @@ export function createMutableContext<T>(initialValue: T) {
       context.subscribe(cb);
       return () => context.unsubscribe(cb);
     }, []);
-    return createElement(reactContext.Provider, { value }, props.children);
+    return <ReactProvider value={value}>{props.children}</ReactProvider>;
   }
 
   function useMutableContext() {
