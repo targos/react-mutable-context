@@ -5,7 +5,7 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-.
+Create a React context that can accessed and mutated with hooks.
 
 ## Installation
 

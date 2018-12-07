@@ -1,11 +1,16 @@
 {
   "name": "react-mutable-context",
   "version": "0.0.0",
-  "description": "",
+  "description": "Create a React context that can accessed and mutated with hooks",
   "main": "./lib/index.js",
   "module": "./lib-es6/index.js",
   "types": "./lib/index.d.ts",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "context",
+    "mutable",
+    "hooks"
+  ],
   "author": "Michaël Zasso",
   "license": "MIT",
   "files": [
@@ -18,7 +23,7 @@
     "eslint-fix": "npm run eslint -- --fix",
     "prepublishOnly": "npm run tsc",
     "test": "npm run test-only && npm run eslint",
-    "test-only": "jest",
+    "test-only": "echo tests not implemented yet",
     "test-coverage": "npm run test-only --coverage",
     "test-travis": "npm run test-coverage && npm run eslint",
     "tsc": "npm run clean && npm run tsc-es5 && npm run tsc-es6",
@@ -48,6 +53,9 @@
       "node"
     ]
   },
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.0"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "eslint": "^5.9.0",
@@ -57,9 +65,13 @@
     "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-typescript": "^0.14.0",
     "jest": "^23.6.0",
+    "react": "^16.7.0-alpha.2",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2"
+  },
+  "dependencies": {
+    "@types/react": "^16.7.13"
   }
 }
