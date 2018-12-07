@@ -14,10 +14,36 @@ Create a React context that can accessed and mutated with hooks.
 ## Usage
 
 ```js
-import { myModule } from 'react-mutable-context';
+import { createMutableContext } from 'react-mutable-context';
 
-const result = myModule(args);
-// result is ...
+const { Provider: ColorProvider, use: useColor } = createMutableContext(
+  'black'
+);
+
+function App() {
+  return (
+    <ColorProvider>
+      <ColorUser />
+    </ColorProvider>
+  );
+}
+
+function ColorUser() {
+  const [color, setColor] = useColor();
+
+  const handleClick = () => setColor('red');
+
+  return (
+    <div style={{ color }}>
+      <div>I'm using color from the context!</div>
+      <div>
+        <button type="button" onClick={handleClick}>
+          Change color
+        </button>
+      </div>
+    </div>
+  );
+}
 ```
 
 ## License
