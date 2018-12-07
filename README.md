@@ -18,10 +18,7 @@ import { createMutableContext } from 'react-mutable-context';
 
 const context = createMutableContext('black');
 
-const {
-  Provider: ColorProvider
-  use: useColor
-} = context;
+const { Provider: ColorProvider, use: useColor } = context;
 
 function App() {
   return (
