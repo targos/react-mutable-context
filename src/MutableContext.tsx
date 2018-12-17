@@ -8,16 +8,21 @@ export default class MutableContext<T> {
   constructor(initialValue: T) {
     this.value = initialValue;
     this.callbacks = new Set();
+    this.getValue = this.getValue.bind(this);
     this.setValue = this.setValue.bind(this);
   }
 
-  public getValue(): MutableContextValue<T> {
-    return [this.value, this.setValue];
+  public getValue(): T {
+    return this.value;
   }
 
   public setValue(newValue: T): void {
     this.value = newValue;
     this.callbacks.forEach((callback) => callback());
+  }
+
+  public getValueAndSetter(): MutableContextValue<T> {
+    return [this.getValue(), this.setValue];
   }
 
   public subscribe(callback: Function): void {

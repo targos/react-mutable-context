@@ -15,15 +15,15 @@ interface IProviderProps {
 export function createMutableContext<T>(initialValue: T) {
   const context = new MutableContext(initialValue);
   const reactContext = createContext<MutableContextValue<T>>(
-    context.getValue()
+    context.getValueAndSetter()
   );
   const { Provider: ReactProvider } = reactContext;
 
   function MutableContextProvider(props: IProviderProps) {
-    const [value, setValue] = useState(() => context.getValue());
+    const [value, setValue] = useState(() => context.getValueAndSetter());
     useEffect(() => {
       const cb = () => {
-        setValue(context.getValue());
+        setValue(context.getValueAndSetter());
       };
       context.subscribe(cb);
       return () => context.unsubscribe(cb);
@@ -38,6 +38,7 @@ export function createMutableContext<T>(initialValue: T) {
   return {
     Provider: MutableContextProvider,
     use: useMutableContext,
+    getValue: context.getValue,
     setValue: context.setValue
   };
 }

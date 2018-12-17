@@ -45,9 +45,11 @@ function ColorUser() {
   );
 }
 
-// The value can also be changed outside of React components
+// The value can also be read and changed outside of React components
 setTimeout(() => {
+  console.log(context.getValue()); // 'black'
   context.setValue('green');
+  console.log(context.getValue()); // 'green'
 }, 1000);
 ```
 
