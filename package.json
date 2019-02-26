@@ -55,24 +55,24 @@
     ]
   },
   "peerDependencies": {
-    "react": "^16.7.0-alpha.0"
+    "react": ">=16.8.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "eslint": "^5.9.0",
-    "eslint-config-cheminfo": "^1.18.0",
-    "eslint-config-cheminfo-typescript": "^1.0.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^22.1.2",
-    "eslint-plugin-typescript": "^0.14.0",
-    "jest": "^23.6.0",
-    "react": "^16.7.0-alpha.2",
-    "rimraf": "^2.6.2",
-    "ts-jest": "^23.10.5",
-    "typescript": "^3.2.2",
-    "typescript-eslint-parser": "^17.0.1"
+    "@types/jest": "^24.0.9",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.14.1",
+    "eslint-config-cheminfo": "^1.20.0",
+    "eslint-config-cheminfo-typescript": "^3.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "jest": "^24.1.0",
+    "react": "^16.8.3",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "@types/react": "^16.7.13"
+    "@types/react": "^16.8.5"
   }
 }

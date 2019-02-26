@@ -5,7 +5,7 @@ export default class MutableContext<T> {
 
   private callbacks: Set<Function>;
 
-  constructor(initialValue: T) {
+  public constructor(initialValue: T) {
     this.value = initialValue;
     this.callbacks = new Set();
     this.getValue = this.getValue.bind(this);
