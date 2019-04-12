@@ -26,6 +26,11 @@ export function createMutableContext<T>(initialValue: T) {
         setValue(context.getValueAndSetter());
       };
       context.subscribe(cb);
+      const currentValue = context.getValue();
+      if (value[0] !== currentValue) {
+        // Value changed before we added the callback
+        cb();
+      }
       return () => context.unsubscribe(cb);
     }, []);
     return <ReactProvider value={value}>{props.children}</ReactProvider>;
