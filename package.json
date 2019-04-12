@@ -1,6 +1,6 @@
 {
   "name": "react-mutable-context",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a React context that can accessed and mutated with hooks",
   "main": "./lib/index.js",
   "module": "./lib-es6/index.js",
